@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <style>
+            body {
+                background-color: #f0f0f0;
+                font-family: Arial, sans-serif;
+            }
+            form {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            input[type="text"] {
+                width: 200px;
+                padding: 8px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            input[type="submit"] {
+                padding: 10px 20px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+            .result {
+                color: #333;
+                font-weight: bold;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <form action='/predict' method="POST">
+            <label for='sepal_length'>Sepal Length:</label><br>
+            <input type='text' name='sepal_length'><br>
+            <label for='sepal_width'>Sepal Width:</label><br>
+            <input type='text' name='sepal_width'><br>
+            <label for='petal_length'>Petal Length:</label><br>
+            <input type='text' name='petal_length'><br>
+            <label for='petal_width'>Petal Width:</label><br>
+            <input type='text' name='petal_width'><br>
+            <div class="result">Class: {{result}}</div><br>
+            <input type='submit' value='Predict'>
+        </form>
+    </body>
+</html>
